@@ -1,0 +1,1619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>accidents_data_cleaner</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;</directory>
+    <parameters>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>-</created_user>
+  <created_date>2017&#x2f;05&#x2f;29 21&#x3a;16&#x3a;24.276</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2017&#x2f;05&#x2f;29 21&#x3a;16&#x3a;24.276</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+  </notepads>
+  <connection>
+    <name>RS</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>RoadSafty</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce10cc9da0ce</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>Cast_numbers_to_strings</from><to>Remove_changed_values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>Cast_numbers_to_strings</to><enabled>Y</enabled> </hop>
+  <hop> <from>Text file input</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Remove_changed_values</from><to>Date and Time</to><enabled>Y</enabled> </hop>
+  <hop> <from>Remove_changed_values</from><to>Accident</to><enabled>Y</enabled> </hop>
+  <hop> <from>Remove_changed_values</from><to>Location</to><enabled>Y</enabled> </hop>
+  <hop> <from>Remove_changed_values</from><to>Road</to><enabled>Y</enabled> </hop>
+  <hop> <from>Date and Time</from><to>Time_Dimention</to><enabled>Y</enabled> </hop>
+  <hop> <from>Accident</from><to>Accident_Fact</to><enabled>Y</enabled> </hop>
+  <hop> <from>Location</from><to>Location_Dimetion</to><enabled>Y</enabled> </hop>
+  <hop> <from>Road</from><to>Road_Dim</to><enabled>Y</enabled> </hop>
+  </order>
+  <step>
+    <name>Cast_numbers_to_strings</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xa;var accident_Sev &#x3d; &#x7b;&#x22;1&#x22;&#x3a;&#x22;Fatal&#x22;, &#x22;2&#x22;&#x3a;&#x22;Serious&#x22;, &#x22;3&#x22;&#x3a;&#x22;Slight&#x22;&#x7d;&#x3b;&#xa;var p_force &#x3d; &#x7b;&#xa;  &#x22;1&#x22;&#x3a;&#x22;Metropolitan Police&#x22; ,  &#x22;3&#x22;&#x3a;&#x22;Cumbria&#x22; ,  &#x22;4&#x22;&#x3a;&#x22;Lancashire&#x22; ,  &#x22;5&#x22;&#x3a;&#x22;Merseyside&#x22; ,  &#xa;  &#x22;6&#x22;&#x3a;&#x22;Greater Manchester&#x22; ,  &#x22;7&#x22;&#x3a;&#x22;Cheshire&#x22; ,   &#x22;10&#x22;&#x3a;&#x22;Northumbria&#x22; ,  &#x22;11&#x22;&#x3a;&#x22;Durham&#x22; ,  &#xa;  &#x22;12&#x22;&#x3a;&#x22;North Yorkshire&#x22; ,  &#x22;13&#x22;&#x3a;&#x22;West Yorkshire&#x22; , &#x22;14&#x22;&#x3a;&#x22;South Yorkshire&#x22; ,  &#xa;  &#x22;16&#x22;&#x3a;&#x22;Humberside&#x22; ,  &#x22;17&#x22;&#x3a;&#x22;Cleveland&#x22; ,  &#x22;20&#x22;&#x3a;&#x22;West Midlands&#x22; ,  &#x22;21&#x22;&#x3a;&#x22;Staffordshire&#x22; ,&#xa;  &#x22;22&#x22;&#x3a;&#x22;West Mercia&#x22; ,  &#x22;23&#x22;&#x3a;&#x22;Warwickshire&#x22; ,  &#x22;30&#x22;&#x3a;&#x22;Derbyshire&#x22; ,  &#x22;31&#x22;&#x3a;&#x22;Nottinghamshire&#x22; , &#xa;  &#x22;32&#x22;&#x3a;&#x22;Lincolnshire&#x22; ,  &#x22;33&#x22;&#x3a;&#x22;Leicestershire&#x22; ,  &#x22;34&#x22;&#x3a;&#x22;Northamptonshire&#x22; ,  &#xa;  &#x22;35&#x22;&#x3a;&#x22;Cambridgeshire&#x22; ,  &#x22;36&#x22;&#x3a;&#x22;Norfolk&#x22; ,  &#x22;37&#x22;&#x3a;&#x22;Suffolk&#x22; ,  &#x22;40&#x22;&#x3a;&#x22;Bedfordshire&#x22; ,  &#xa;  &#x22;41&#x22;&#x3a;&#x22;Hertfordshire&#x22; ,  &#x22;42&#x22;&#x3a;&#x22;Essex&#x22; ,  &#x22;43&#x22;&#x3a;&#x22;Thames Valley&#x22; ,  &#x22;44&#x22;&#x3a;&#x22;Hampshire&#x22; ,  &#xa;  &#x22;45&#x22;&#x3a;&#x22;Surrey&#x22; ,  &#x22;46&#x22;&#x3a;&#x22;Kent&#x22; ,  &#x22;47&#x22;&#x3a;&#x22;Sussex&#x22; ,  &#x22;48&#x22;&#x3a;&#x22;City of London&#x22; ,  &#xa;  &#x22;50&#x22;&#x3a;&#x22;Devon and Cornwall&#x22; ,  &#x22;52&#x22;&#x3a;&#x22;Avon and Somerset&#x22; ,  &#x22;53&#x22;&#x3a;&#x22;Gloucestershire&#x22; ,  &#xa;  &#x22;54&#x22;&#x3a;&#x22;Wiltshire&#x22; ,  &#x22;55&#x22;&#x3a;&#x22;Dorset&#x22; ,  &#x22;60&#x22;&#x3a;&#x22;North Wales&#x22; ,  &#x22;61&#x22;&#x3a;&#x22;Gwent&#x22; ,  &#xa;  &#x22;62&#x22;&#x3a;&#x22;South Wales&#x22; ,  &#x22;63&#x22;&#x3a;&#x22;Dyfed-Powys&#x22; ,  &#x22;91&#x22;&#x3a;&#x22;Northern&#x22; ,  &#x22;92&#x22;&#x3a;&#x22;Grampian&#x22; ,  &#xa;  &#x22;93&#x22;&#x3a;&#x22;Tayside&#x22; ,  &#x22;94&#x22;&#x3a;&#x22;Fife&#x22; ,  &#x22;95&#x22;&#x3a;&#x22;Lothian and Borders&#x22; ,  &#x22;96&#x22;&#x3a;&#x22;Central&#x22; ,  &#xa;  &#x22;97&#x22;&#x3a;&#x22;Strathclyde&#x22; ,  &#x22;98&#x22;&#x3a;&#x22;Dumfries and Galloway&#x22;&#xa;&#x7d;&#xa;var days_of_week &#x3d; &#x7b;&#x22;1&#x22;&#x3a;&#x22;Sunday&#x22;, &#x22;2&#x22;&#x3a;&#x22;Monday&#x22;, &#x22;3&#x22;&#x3a;&#x22;Tuesday&#x22;, &#x22;4&#x22;&#x3a;&#x22;Wedensday&#x22;, &#xa;					&#x22;5&#x22;&#x3a;&#x22;Thursday&#x22;, &#x22;6&#x22;&#x3a;&#x22;Friday&#x22;,&#x22;7&#x22;&#x3a;&#x22;Saturday&#x22;&#x7d;&#xa;var local_auth_disctrict &#x3d; &#x7b;&#xa;  &#x22;1&#x22;&#x3a;&#x22;Westminster &#x22;,  &#x22;2&#x22;&#x3a;&#x22;Camden &#x22;,  &#x22;3&#x22;&#x3a;&#x22;Islington &#x22;,  &#x22;4&#x22;&#x3a;&#x22;Hackney &#x22;,  &#x22;5&#x22;&#x3a;&#x22;Tower Hamlets &#x22;,  &#xa;  &#x22;6&#x22;&#x3a;&#x22;Greenwich &#x22;,  &#x22;7&#x22;&#x3a;&#x22;Lewisham &#x22;,  &#x22;8&#x22;&#x3a;&#x22;Southwark &#x22;,  &#x22;9&#x22;&#x3a;&#x22;Lambeth &#x22;,  &#x22;10&#x22;&#x3a;&#x22;Wandsworth &#x22;,  &#xa;  &#x22;11&#x22;&#x3a;&#x22;Hammersmith and Fulham &#x22;,  &#x22;12&#x22;&#x3a;&#x22;Kensington and Chelsea &#x22;,  &#x22;13&#x22;&#x3a;&#x22;Waltham Forest &#x22;,  &#xa;  &#x22;14&#x22;&#x3a;&#x22;Redbridge &#x22;,  &#x22;15&#x22;&#x3a;&#x22;Havering &#x22;,  &#x22;16&#x22;&#x3a;&#x22;Barking and Dagenham &#x22;,  &#x22;17&#x22;&#x3a;&#x22;Newham &#x22;,  &#xa;  &#x22;18&#x22;&#x3a;&#x22;Bexley &#x22;,  &#x22;19&#x22;&#x3a;&#x22;Bromley &#x22;,  &#x22;20&#x22;&#x3a;&#x22;Croydon &#x22;,  &#x22;21&#x22;&#x3a;&#x22;Sutton &#x22;,  &#x22;22&#x22;&#x3a;&#x22;Merton &#x22;,  &#xa;  &#x22;23&#x22;&#x3a;&#x22;Kingston upon Thames &#x22;,  &#x22;24&#x22;&#x3a;&#x22;Richmond upon Thames &#x22;,  &#x22;25&#x22;&#x3a;&#x22;Hounslow &#x22;,  &#x22;26&#x22;&#x3a;&#x22;Hillingdon &#x22;, &#xa;   &#x22;27&#x22;&#x3a;&#x22;Ealing &#x22;,  &#x22;28&#x22;&#x3a;&#x22;Brent&#x22;,  &#x22;29&#x22;&#x3a;&#x22;Harrow &#x22;,  &#x22;30&#x22;&#x3a;&#x22;Barnet &#x22;,  &#x22;31&#x22;&#x3a;&#x22;Haringey &#x22;,&#xa;   &#x22;32&#x22;&#x3a;&#x22;Enfield &#x22;,  &#x22;33&#x22;&#x3a;&#x22;Hertsmere &#x22;,  &#x22;38&#x22;&#x3a;&#x22;Epsom and Ewell &#x22;,  &#x22;40&#x22;&#x3a;&#x22;Spelthorne &#x22;,  &#xa;   &#x22;57&#x22;&#x3a;&#x22;London Airport &#x28;Heathrow&#x29; &#x22;,  &#x22;60&#x22;&#x3a;&#x22;Allerdale &#x22;,  &#x22;61&#x22;&#x3a;&#x22;Barrow-in-Furness &#x22;,  &#xa;   &#x22;62&#x22;&#x3a;&#x22;Carlisle &#x22;,  &#x22;63&#x22;&#x3a;&#x22;Copeland &#x22;,  &#x22;64&#x22;&#x3a;&#x22;Eden &#x22;,  &#x22;65&#x22;&#x3a;&#x22;South Lakeland &#x22;, &#xa;    &#x22;70&#x22;&#x3a;&#x22;Blackburn with Darwen &#x22;,  &#x22;71&#x22;&#x3a;&#x22;Blackpool &#x22;,  &#x22;72&#x22;&#x3a;&#x22;Burnley &#x22;,  &#x22;73&#x22;&#x3a;&#x22;Chorley &#x22;,  &#xa;    &#x22;74&#x22;&#x3a;&#x22;Fylde &#x22;,  &#x22;75&#x22;&#x3a;&#x22;Hyndburn &#x22;,  &#x22;76&#x22;&#x3a;&#x22;Lancaster &#x22;,  &#x22;77&#x22;&#x3a;&#x22;Pendle &#x22;,  &#x22;79&#x22;&#x3a;&#x22;Preston &#x22;,&#xa;    &#x22;80&#x22;&#x3a;&#x22;Ribble Valley &#x22;,  &#x22;82&#x22;&#x3a;&#x22;Rossendale &#x22;,  &#x22;83&#x22;&#x3a;&#x22;South Ribble &#x22;,  &#x22;84&#x22;&#x3a;&#x22;West Lancashire &#x22;,&#xa;      &#x22;85&#x22;&#x3a;&#x22;Wyre &#x22;,  &#x22;90&#x22;&#x3a;&#x22;Knowsley &#x22;,  &#x22;91&#x22;&#x3a;&#x22;Liverpool &#x22;,  &#x22;92&#x22;&#x3a;&#x22;St. Helens &#x22;,  &#x22;93&#x22;&#x3a;&#x22;Sefton &#x22;,&#xa;  &#x22;95&#x22;&#x3a;&#x22;Wirral &#x22;,  &#x22;100&#x22;&#x3a;&#x22;Bolton &#x22;,  &#x22;101&#x22;&#x3a;&#x22;Bury &#x22;,  &#x22;102&#x22;&#x3a;&#x22;Manchester &#x22;,  &#x22;104&#x22;&#x3a;&#x22;Oldham &#x22;, &#xa;   &#x22;106&#x22;&#x3a;&#x22;Rochdale &#x22;,  &#x22;107&#x22;&#x3a;&#x22;Salford &#x22;,  &#x22;109&#x22;&#x3a;&#x22;Stockport &#x22;,  &#x22;110&#x22;&#x3a;&#x22;Tameside &#x22;,  &#xa;   &#x22;112&#x22;&#x3a;&#x22;Trafford &#x22;,  &#x22;114&#x22;&#x3a;&#x22;Wigan &#x22;,  &#x22;120&#x22;&#x3a;&#x22;Chester &#x22;,  &#x22;121&#x22;&#x3a;&#x22;Congleton &#x22;,  &#xa;   &#x22;122&#x22;&#x3a;&#x22;Crewe and Nantwich &#x22;,  &#x22;123&#x22;&#x3a;&#x22;Ellesmere Port and Neston &#x22;,  &#x22;124&#x22;&#x3a;&#x22;Halton &#x22;, &#xa;    &#x22;126&#x22;&#x3a;&#x22;Macclesfield &#x22;,  &#x22;127&#x22;&#x3a;&#x22;Vale Royal &#x22;,  &#x22;128&#x22;&#x3a;&#x22;Warrington &#x22;, &#xa;     &#x22;129&#x22;&#x3a;&#x22;Cheshire East &#x22;,  &#x22;130&#x22;&#x3a;&#x22;Cheshire West and Chester &#x22;,  &#x22;139&#x22;&#x3a;&#x22;Northumberland &#x22;, &#xa;  &#x22;140&#x22;&#x3a;&#x22;Alnwick &#x22;,  &#x22;141&#x22;&#x3a;&#x22;Berwick-upon-Tweed &#x22;,  &#x22;142&#x22;&#x3a;&#x22;Blyth Valley &#x22;,&#xa;  &#x22;143&#x22;&#x3a;&#x22;Castle Morpeth &#x22;,  &#x22;144&#x22;&#x3a;&#x22;Tynedale &#x22;,  &#x22;145&#x22;&#x3a;&#x22;Wansbeck &#x22;, &#xa;  &#x22;146&#x22;&#x3a;&#x22;Gateshead &#x22;,  &#x22;147&#x22;&#x3a;&#x22;Newcastle upon Tyne &#x22;,  &#x22;148&#x22;&#x3a;&#x22;North Tyneside &#x22;,&#xa;  &#x22;149&#x22;&#x3a;&#x22;South Tyneside &#x22;,  &#x22;150&#x22;&#x3a;&#x22;Sunderland &#x22;,  &#x22;160&#x22;&#x3a;&#x22;Chester-le-Street &#x22;,&#xa;  &#x22;161&#x22;&#x3a;&#x22;Darlington &#x22;,  &#x22;162&#x22;&#x3a;&#x22;Derwentside &#x22;,  &#x22;163&#x22;&#x3a;&#x22;Durham &#x22;, &#xa;  &#x22;164&#x22;&#x3a;&#x22;Easington &#x22;,  &#x22;165&#x22;&#x3a;&#x22;Sedgefield &#x22;,  &#x22;166&#x22;&#x3a;&#x22;Teesdale &#x22;, &#xa;    &#x22;168&#x22;&#x3a;&#x22;Wear Valley &#x22;,  &#x22;169&#x22;&#x3a;&#x22;County Durham &#x22;,  &#x22;180&#x22;&#x3a;&#x22;Craven &#x22;,  &#x22;181&#x22;&#x3a;&#x22;Hambleton &#x22;,&#xa;  &#x22;182&#x22;&#x3a;&#x22;Harrogate &#x22;,  &#x22;184&#x22;&#x3a;&#x22;Richmondshire &#x22;,  &#x22;185&#x22;&#x3a;&#x22;Ryedale &#x22;,  &#x22;186&#x22;&#x3a;&#x22;Scarborough &#x22;, &#xa;&#x22;187&#x22;&#x3a;&#x22;Selby &#x22;,  &#x22;189&#x22;&#x3a;&#x22;York &#x22;,  &#x22;200&#x22;&#x3a;&#x22;Bradford &#x22;,  &#x22;202&#x22;&#x3a;&#x22;Calderdale &#x22;,  &#xa;&#x22;203&#x22;&#x3a;&#x22;Kirklees &#x22;,  &#x22;204&#x22;&#x3a;&#x22;Leeds &#x22;,  &#x22;206&#x22;&#x3a;&#x22;Wakefield &#x22;,  &#x22;210&#x22;&#x3a;&#x22;Barnsley &#x22;, &#xa;&#x22;211&#x22;&#x3a;&#x22;Doncaster &#x22;,  &#x22;213&#x22;&#x3a;&#x22;Rotherham &#x22;,  &#x22;215&#x22;&#x3a;&#x22;Sheffield &#x22;,  &#xa;&#x22;228&#x22;&#x3a;&#x22;Kingston upon Hull, City of &#x22;,  &#x22;231&#x22;&#x3a;&#x22;East Riding of Yorkshire &#x22;, &#xa;&#x22;232&#x22;&#x3a;&#x22;North Lincolnshire &#x22;,  &#x22;233&#x22;&#x3a;&#x22;North East Lincolnshire &#x22;,  &#xa;&#x22;240&#x22;&#x3a;&#x22;Hartlepool &#x22;,  &#x22;241&#x22;&#x3a;&#x22;Redcar and Cleveland &#x22;,  &#x22;243&#x22;&#x3a;&#x22;Middlesbrough &#x22;, &#xa;&#x22;245&#x22;&#x3a;&#x22;Stockton-on-Tees &#x22;,  &#x22;250&#x22;&#x3a;&#x22;Cannock Chase &#x22;,  &#x22;251&#x22;&#x3a;&#x22;East Staffordshire &#x22;,&#xa;&#x22;252&#x22;&#x3a;&#x22;Lichfield &#x22;,  &#x22;253&#x22;&#x3a;&#x22;Newcastle-under-Lyme &#x22;,  &#x22;254&#x22;&#x3a;&#x22;South Staffordshire &#x22;, &#xa;&#x22;255&#x22;&#x3a;&#x22;Stafford &#x22;,  &#x22;256&#x22;&#x3a;&#x22;Staffordshire Moorlands &#x22;,  &#x22;257&#x22;&#x3a;&#x22;Stoke-on-Trent &#x22;, &#xa;&#x22;258&#x22;&#x3a;&#x22;Tamworth &#x22;,  &#x22;270&#x22;&#x3a;&#x22;Bromsgrove &#x22;,  &#x22;273&#x22;&#x3a;&#x22;Malvern Hills &#x22;,  &#x22;274&#x22;&#x3a;&#x22;Redditch &#x22;, &#xa;&#x22;276&#x22;&#x3a;&#x22;Worcester &#x22;,  &#x22;277&#x22;&#x3a;&#x22;Wychavon &#x22;,  &#x22;278&#x22;&#x3a;&#x22;Wyre Forest &#x22;,  &#x22;279&#x22;&#x3a;&#x22;Bridgnorth &#x22;, &#xa;&#x22;280&#x22;&#x3a;&#x22;North Shropshire &#x22;,  &#x22;281&#x22;&#x3a;&#x22;Oswestry &#x22;,  &#x22;282&#x22;&#x3a;&#x22;Shrewsbury and Atcham &#x22;,  &#xa;&#x22;283&#x22;&#x3a;&#x22;South Shropshire &#x22;,  &#x22;284&#x22;&#x3a;&#x22;Telford and Wrekin &#x22;,  &#x22;285&#x22;&#x3a;&#x22;Herefordshire, County of  &#x22;,&#xa;&#x22;286&#x22;&#x3a;&#x22;Shropshire &#x22;,  &#x22;290&#x22;&#x3a;&#x22;North Warwickshire &#x22;,  &#x22;291&#x22;&#x3a;&#x22;Nuneaton and Bedworth &#x22;, &#xa;&#x22;292&#x22;&#x3a;&#x22;Rugby  &#x22;,  &#x22;293&#x22;&#x3a;&#x22;Stratford-upon-Avon &#x22;,  &#x22;294&#x22;&#x3a;&#x22;Warwick &#x22;,  &#x22;300&#x22;&#x3a;&#x22;Birmingham &#x22;, &#xa;&#x22;302&#x22;&#x3a;&#x22;Coventry &#x22;,  &#x22;303&#x22;&#x3a;&#x22;Dudley &#x22;,  &#x22;305&#x22;&#x3a;&#x22;Sandwell &#x22;,  &#x22;306&#x22;&#x3a;&#x22;Solihull &#x22;,  &#xa;&#x22;307&#x22;&#x3a;&#x22;Walsall &#x22;,  &#x22;309&#x22;&#x3a;&#x22;Wolverhampton &#x22;,  &#x22;320&#x22;&#x3a;&#x22;Amber Valley &#x22;,  &#x22;321&#x22;&#x3a;&#x22;Bolsover &#x22;,  &#xa;&#x22;322&#x22;&#x3a;&#x22;Chesterfield &#x22;,  &#x22;323&#x22;&#x3a;&#x22;Derby &#x22;,  &#x22;324&#x22;&#x3a;&#x22;Erewash &#x22;,  &#x22;325&#x22;&#x3a;&#x22;High Peak &#x22;,  &#xa;&#x22;327&#x22;&#x3a;&#x22;North East Derbyshire &#x22;,  &#x22;328&#x22;&#x3a;&#x22;South Derbyshire &#x22;,  &#x22;329&#x22;&#x3a;&#x22;Derbyshire Dales &#x22;,  &#xa;&#x22;340&#x22;&#x3a;&#x22;Ashfield &#x22;,  &#x22;341&#x22;&#x3a;&#x22;Bassetlaw &#x22;,  &#x22;342&#x22;&#x3a;&#x22;Broxtowe &#x22;,  &#x22;343&#x22;&#x3a;&#x22;Gedling &#x22;,  &#xa;&#x22;344&#x22;&#x3a;&#x22;Mansfield &#x22;,  &#x22;345&#x22;&#x3a;&#x22;Newark and Sherwood &#x22;,  &#x22;346&#x22;&#x3a;&#x22;Nottingham &#x22;,  &#xa;&#x22;347&#x22;&#x3a;&#x22;Rushcliffe &#x22;,  &#x22;350&#x22;&#x3a;&#x22;Boston &#x22;,  &#x22;351&#x22;&#x3a;&#x22;East Lindsey &#x22;,  &#x22;352&#x22;&#x3a;&#x22;Lincoln &#x22;, &#xa; &#x22;353&#x22;&#x3a;&#x22;North Kesteven &#x22;,  &#x22;354&#x22;&#x3a;&#x22;South Holland &#x22;,  &#x22;355&#x22;&#x3a;&#x22;South Kesteven &#x22;, &#xa;&#x22;356&#x22;&#x3a;&#x22;West Lindsey &#x22;,  &#x22;360&#x22;&#x3a;&#x22;Blaby &#x22;,  &#x22;361&#x22;&#x3a;&#x22;Hinckley and Bosworth &#x22;, &#xa; &#x22;362&#x22;&#x3a;&#x22;Charnwood &#x22;,  &#x22;363&#x22;&#x3a;&#x22;Harborough &#x22;,  &#x22;364&#x22;&#x3a;&#x22;Leicester &#x22;,  &#x22;365&#x22;&#x3a;&#x22;Melton &#x22;,  &#xa; &#x22;366&#x22;&#x3a;&#x22;North West Leicestershire &#x22;,  &#x22;367&#x22;&#x3a;&#x22;Oadby and Wigston &#x22;,  &#x22;368&#x22;&#x3a;&#x22;Rutland &#x22;,  &#x22;380&#x22;&#x3a;&#x22;Corby &#x22;,  &#xa; &#x22;381&#x22;&#x3a;&#x22;Daventry &#x22;,  &#x22;382&#x22;&#x3a;&#x22;East Northamptonshire &#x22;,  &#x22;383&#x22;&#x3a;&#x22;Kettering &#x22;,  &#x22;384&#x22;&#x3a;&#x22;Northampton &#x22;, &#xa;&#x22;385&#x22;&#x3a;&#x22;South Northamptonshire &#x22;,  &#x22;386&#x22;&#x3a;&#x22;Wellingborough &#x22;,  &#x22;390&#x22;&#x3a;&#x22;Cambridge &#x22;, &#xa; &#x22;391&#x22;&#x3a;&#x22;East Cambridgeshire &#x22;,  &#x22;392&#x22;&#x3a;&#x22;Fenland &#x22;,  &#x22;393&#x22;&#x3a;&#x22;Huntingdonshire &#x22;,  &#xa; &#x22;394&#x22;&#x3a;&#x22;Peterborough &#x22;,  &#x22;395&#x22;&#x3a;&#x22;South Cambridgeshire &#x22;,  &#x22;400&#x22;&#x3a;&#x22;Breckland &#x22;,&#xa; &#x22;401&#x22;&#x3a;&#x22;Broadland &#x22;,  &#x22;402&#x22;&#x3a;&#x22;Great Yarmouth &#x22;,  &#x22;404&#x22;&#x3a;&#x22;Norwich &#x22;,  &#x22;405&#x22;&#x3a;&#x22;North Norfolk &#x22;, &#xa;  &#x22;406&#x22;&#x3a;&#x22;South Norfolk &#x22;,  &#x22;407&#x22;&#x3a;&#x22;King&#x27;s Lynn and West Norfolk &#x22;,  &#x22;410&#x22;&#x3a;&#x22;Babergh &#x22;,  &#xa;  &#x22;411&#x22;&#x3a;&#x22;Forest Heath &#x22;,  &#x22;412&#x22;&#x3a;&#x22;Ipswich &#x22;,  &#x22;413&#x22;&#x3a;&#x22;Mid Suffolk &#x22;,  &#x22;414&#x22;&#x3a;&#x22;St. Edmundsbury &#x22;, &#xa;   &#x22;415&#x22;&#x3a;&#x22;Suffolk Coastal &#x22;,  &#x22;416&#x22;&#x3a;&#x22;Waveney &#x22;,  &#x22;420&#x22;&#x3a;&#x22;Bedford &#x22;,  &#x22;421&#x22;&#x3a;&#x22;Luton &#x22;, &#xa;  &#x22;422&#x22;&#x3a;&#x22;Mid Bedfordshire &#x22;,  &#x22;423&#x22;&#x3a;&#x22;South Bedfordshire &#x22;,  &#x22;424&#x22;&#x3a;&#x22;Central Bedfordshire &#x22;, &#xa;   &#x22;430&#x22;&#x3a;&#x22;Broxbourne &#x22;,  &#x22;431&#x22;&#x3a;&#x22;Dacorum &#x22;,  &#x22;432&#x22;&#x3a;&#x22;East Hertfordshire &#x22;, &#xa;    &#x22;433&#x22;&#x3a;&#x22;North Hertfordshire &#x22;,  &#x22;434&#x22;&#x3a;&#x22;St. Albans &#x22;,  &#x22;435&#x22;&#x3a;&#x22;Stevenage &#x22;,  &#xa;    &#x22;436&#x22;&#x3a;&#x22;Three Rivers &#x22;,  &#x22;437&#x22;&#x3a;&#x22;Watford &#x22;,  &#x22;438&#x22;&#x3a;&#x22;Welwyn Hatfield &#x22;,  &#x22;450&#x22;&#x3a;&#x22;Basildon &#x22;, &#xa;     &#x22;451&#x22;&#x3a;&#x22;Braintree &#x22;,  &#x22;452&#x22;&#x3a;&#x22;Brentwood &#x22;,  &#x22;453&#x22;&#x3a;&#x22;Castle Point &#x22;,  &#x22;454&#x22;&#x3a;&#x22;Chelmsford &#x22; ,  &#xa;     &#x22;455&#x22;&#x3a;&#x22;Colchester &#x22;,  &#x22;456&#x22;&#x3a;&#x22;Epping Forest &#x22;,  &#x22;457&#x22;&#x3a;&#x22;Harlow &#x22;,  &#x22;458&#x22;&#x3a;&#x22;Maldon &#x22;,  &#xa;     &#x22;459&#x22;&#x3a;&#x22;Rochford &#x22;,  &#x22;460&#x22;&#x3a;&#x22;Southend-on-Sea &#x22;,  &#x22;461&#x22;&#x3a;&#x22;Tendring &#x22;,  &#x22;462&#x22;&#x3a;&#x22;Thurrock &#x22;,  &#xa;     &#x22;463&#x22;&#x3a;&#x22;Uttlesford &#x22;,  &#x22;470&#x22;&#x3a;&#x22;Bracknell Forest &#x22;,  &#x22;471&#x22;&#x3a;&#x22;West Berkshire &#x22;,  &#xa;     &#x22;472&#x22;&#x3a;&#x22;Reading &#x22;,  &#x22;473&#x22;&#x3a;&#x22;Slough &#x22;,  &#x22;474&#x22;&#x3a;&#x22;Windsor and Maidenhead &#x22;,  &#x22;475&#x22;&#x3a;&#x22;Wokingham &#x22;,  &#xa;     &#x22;476&#x22;&#x3a;&#x22;Aylesbury Vale &#x22;,  &#x22;477&#x22;&#x3a;&#x22;South Bucks &#x22;,  &#x22;478&#x22;&#x3a;&#x22;Chiltern &#x22;,  &#x22;479&#x22;&#x3a;&#x22;Milton Keynes &#x22;, &#xa;      &#x22;480&#x22;&#x3a;&#x22;Wycombe &#x22;,  &#x22;481&#x22;&#x3a;&#x22;Cherwell &#x22;,  &#x22;482&#x22;&#x3a;&#x22;Oxford &#x22;,  &#x22;483&#x22;&#x3a;&#x22;Vale of White Horse &#x22;,  &#xa;      &#x22;484&#x22;&#x3a;&#x22;South Oxfordshire &#x22;,  &#x22;485&#x22;&#x3a;&#x22;West Oxfordshire &#x22;,  &#x22;490&#x22;&#x3a;&#x22;Basingstoke and Deane &#x22;,  &#xa;      &#x22;491&#x22;&#x3a;&#x22;Eastleigh &#x22;,  &#x22;492&#x22;&#x3a;&#x22;Fareham &#x22;,  &#x22;493&#x22;&#x3a;&#x22;Gosport &#x22;,  &#x22;494&#x22;&#x3a;&#x22;Hart &#x22;,  &#x22;495&#x22;&#x3a;&#x22;Havant &#x22;, &#xa;   &#x22;496&#x22;&#x3a;&#x22;New Forest &#x22;,  &#x22;497&#x22;&#x3a;&#x22;East Hampshire &#x22;,  &#x22;498&#x22;&#x3a;&#x22;Portsmouth &#x22;,  &#x22;499&#x22;&#x3a;&#x22;Rushmoor &#x22;, &#xa;    &#x22;500&#x22;&#x3a;&#x22;Southampton  &#x22;,  &#x22;501&#x22;&#x3a;&#x22;Test Valley &#x22;,  &#x22;502&#x22;&#x3a;&#x22;Winchester &#x22;, &#xa;     &#x22;505&#x22;&#x3a;&#x22;Isle of Wight &#x22;,  &#x22;510&#x22;&#x3a;&#x22;Elmbridge &#x22;,  &#x22;511&#x22;&#x3a;&#x22;Guildford &#x22;,  &#x22;512&#x22;&#x3a;&#x22;Mole Valley &#x22;,  &#xa;     &#x22;513&#x22;&#x3a;&#x22;Reigate and Banstead &#x22;,  &#x22;514&#x22;&#x3a;&#x22;Runnymede &#x22;,  &#x22;515&#x22;&#x3a;&#x22;Surrey Heath &#x22;,  &#xa;     &#x22;516&#x22;&#x3a;&#x22;Tandridge &#x22;,  &#x22;517&#x22;&#x3a;&#x22;Waverley &#x22;,  &#x22;518&#x22;&#x3a;&#x22;Woking &#x22;,  &#x22;530&#x22;&#x3a;&#x22;Ashford &#x22;, &#xa;      &#x22;531&#x22;&#x3a;&#x22;Canterbury &#x22;,  &#x22;532&#x22;&#x3a;&#x22;Dartford &#x22;,  &#x22;533&#x22;&#x3a;&#x22;Dover &#x22;,  &#x22;535&#x22;&#x3a;&#x22;Gravesham &#x22;,  &#xa;      &#x22;536&#x22;&#x3a;&#x22;Maidstone &#x22;,  &#x22;538&#x22;&#x3a;&#x22;Sevenoaks &#x22;,  &#x22;539&#x22;&#x3a;&#x22;Shepway &#x22;,  &#x22;540&#x22;&#x3a;&#x22;Swale &#x22;,  &#xa;      &#x22;541&#x22;&#x3a;&#x22;Thanet &#x22;,  &#x22;542&#x22;&#x3a;&#x22;Tonbridge and Malling &#x22;,  &#x22;543&#x22;&#x3a;&#x22;Tunbridge Wells &#x22;,  &#xa;      &#x22;544&#x22;&#x3a;&#x22;Medway &#x22;,  &#x22;551&#x22;&#x3a;&#x22;Eastbourne &#x22;,  &#x22;552&#x22;&#x3a;&#x22;Hastings &#x22;,  &#x22;554&#x22;&#x3a;&#x22;Lewes &#x22;,  &#xa;      &#x22;555&#x22;&#x3a;&#x22;Rother &#x22;,  &#x22;556&#x22;&#x3a;&#x22;Wealden &#x22;,  &#x22;557&#x22;&#x3a;&#x22;Adur &#x22;,  &#x22;558&#x22;&#x3a;&#x22;Arun &#x22;,  &#x22;559&#x22;&#x3a;&#x22;Chichester &#x22;, &#xa;     &#x22;560&#x22;&#x3a;&#x22;Crawley &#x22;,  &#x22;562&#x22;&#x3a;&#x22;Horsham &#x22;,  &#x22;563&#x22;&#x3a;&#x22;Mid Sussex &#x22;,  &#x22;564&#x22;&#x3a;&#x22;Worthing &#x22;,  &#xa;     &#x22;565&#x22;&#x3a;&#x22;Brighton and Hove &#x22;,  &#x22;570&#x22;&#x3a;&#x22;City of London &#x22;,  &#x22;580&#x22;&#x3a;&#x22;East Devon &#x22;, &#xa;      &#x22;581&#x22;&#x3a;&#x22;Exeter &#x22;,  &#x22;582&#x22;&#x3a;&#x22;North Devon &#x22;,  &#x22;583&#x22;&#x3a;&#x22;Plymouth &#x22;,  &#x22;584&#x22;&#x3a;&#x22;South Hams &#x22;,&#xa;      &#x22;585&#x22;&#x3a;&#x22;Teignbridge &#x22;,  &#x22;586&#x22;&#x3a;&#x22;Mid Devon &#x22;,  &#x22;587&#x22;&#x3a;&#x22;Torbay &#x22;,  &#x22;588&#x22;&#x3a;&#x22;Torridge &#x22;, &#xa;   &#x22;589&#x22;&#x3a;&#x22;West Devon &#x22;,  &#x22;590&#x22;&#x3a;&#x22;Caradon &#x22;,  &#x22;591&#x22;&#x3a;&#x22;Carrick &#x22;,  &#x22;592&#x22;&#x3a;&#x22;Kerrier &#x22;,&#xa;   &#x22;593&#x22;&#x3a;&#x22;North Cornwall &#x22;,  &#x22;594&#x22;&#x3a;&#x22;Penwith &#x22;,  &#x22;595&#x22;&#x3a;&#x22;Restormel &#x22;,  &#x22;596&#x22;&#x3a;&#x22;Cornwall &#x22;,  &#xa;   &#x22;601&#x22;&#x3a;&#x22;Bristol, City of &#x22;,  &#x22;605&#x22;&#x3a;&#x22;North Somerset &#x22;,  &#x22;606&#x22;&#x3a;&#x22;Mendip &#x22;,  &#x22;607&#x22;&#x3a;&#x22;Sedgemoor &#x22;, &#xa;    &#x22;608&#x22;&#x3a;&#x22;Taunton Deane &#x22;,  &#x22;609&#x22;&#x3a;&#x22;West Somerset &#x22;,  &#x22;610&#x22;&#x3a;&#x22;South Somerset &#x22;,  &#xa;    &#x22;611&#x22;&#x3a;&#x22;Bath and North East Somerset &#x22;,  &#x22;612&#x22;&#x3a;&#x22;South Gloucestershire &#x22;,  &#xa;    &#x22;620&#x22;&#x3a;&#x22;Cheltenham &#x22;,  &#x22;621&#x22;&#x3a;&#x22;Cotswold &#x22;,  &#x22;622&#x22;&#x3a;&#x22;Forest of Dean &#x22;,  &#xa;    &#x22;623&#x22;&#x3a;&#x22;Gloucester &#x22;,  &#x22;624&#x22;&#x3a;&#x22;Stroud &#x22;,  &#x22;625&#x22;&#x3a;&#x22;Tewkesbury &#x22;,  &#x22;630&#x22;&#x3a;&#x22;Kennet &#x22;, &#xa;     &#x22;631&#x22;&#x3a;&#x22;North Wiltshire &#x22;,  &#x22;632&#x22;&#x3a;&#x22;Salisbury &#x22;,  &#x22;633&#x22;&#x3a;&#x22;Swindon &#x22;,  &#x22;634&#x22;&#x3a;&#x22;West Wiltshire &#x22;, &#xa;      &#x22;635&#x22;&#x3a;&#x22;Wiltshire &#x22;,  &#x22;640&#x22;&#x3a;&#x22;Bournemouth &#x22;,  &#x22;641&#x22;&#x3a;&#x22;Christchurch &#x22;,  &#x22;642&#x22;&#x3a;&#x22;North Dorset &#x22;,  &#xa;      &#x22;643&#x22;&#x3a;&#x22;Poole &#x22;,  &#x22;644&#x22;&#x3a;&#x22;Purbeck &#x22;,  &#x22;645&#x22;&#x3a;&#x22;West Dorset &#x22;,  &#x22;646&#x22;&#x3a;&#x22;Weymouth and Portland &#x22;, &#xa;       &#x22;647&#x22;&#x3a;&#x22;East Dorset &#x22;,  &#x22;720&#x22;&#x3a;&#x22;Isle of Anglesey &#x22;,  &#x22;721&#x22;&#x3a;&#x22;Conwy &#x22;,  &#x22;722&#x22;&#x3a;&#x22;Gwynedd &#x22;,&#xa;     &#x22;723&#x22;&#x3a;&#x22;Denbighshire &#x22;,  &#x22;724&#x22;&#x3a;&#x22;Flintshire &#x22;,  &#x22;725&#x22;&#x3a;&#x22;Wrexham &#x22;,  &#x22;730&#x22;&#x3a;&#x22;Blaenau Gwent &#x22;,  &#xa;     &#x22;731&#x22;&#x3a;&#x22;Caerphilly &#x22;,  &#x22;732&#x22;&#x3a;&#x22;Monmouthshire &#x22;,  &#x22;733&#x22;&#x3a;&#x22;Newport &#x22;,  &#x22;734&#x22;&#x3a;&#x22;Torfaen &#x22;,  &#xa;     &#x22;740&#x22;&#x3a;&#x22;Bridgend &#x22;,  &#x22;741&#x22;&#x3a;&#x22;Cardiff &#x22;,  &#x22;742&#x22;&#x3a;&#x22;Merthyr Tydfil &#x22;,  &#x22;743&#x22;&#x3a;&#x22;Neath Port Talbot &#x22;, &#xa;    &#x22;744&#x22;&#x3a;&#x22;Rhondda, Cynon, Taff &#x22;,  &#x22;745&#x22;&#x3a;&#x22;Swansea &#x22;,  &#x22;746&#x22;&#x3a;&#x22;The Vale of Glamorgan &#x22;,  &#xa;    &#x22;750&#x22;&#x3a;&#x22;Ceredigion &#x22;,  &#x22;751&#x22;&#x3a;&#x22;Carmarthenshire &#x22;,  &#x22;752&#x22;&#x3a;&#x22;Pembrokeshire &#x22;,  &#x22;753&#x22;&#x3a;&#x22;Powys &#x22;, &#xa;     &#x22;910&#x22;&#x3a;&#x22;Aberdeen City &#x22;,  &#x22;911&#x22;&#x3a;&#x22;Aberdeenshire &#x22;,  &#x22;912&#x22;&#x3a;&#x22;Angus &#x22;,  &#x22;913&#x22;&#x3a;&#x22;Argyll and Bute &#x22;,&#xa;      &#x22;914&#x22;&#x3a;&#x22;Scottish Borders &#x22;,  &#x22;915&#x22;&#x3a;&#x22;Clackmannanshire &#x22;,  &#x22;916&#x22;&#x3a;&#x22;West Dunbartonshire &#x22;, &#xa;     &#x22;917&#x22;&#x3a;&#x22;Dumfries and Galloway &#x22;,  &#x22;918&#x22;&#x3a;&#x22;Dundee City &#x22;,  &#x22;919&#x22;&#x3a;&#x22;East Ayrshire &#x22;,  &#xa;     &#x22;920&#x22;&#x3a;&#x22;East Dunbartonshire &#x22;,  &#x22;921&#x22;&#x3a;&#x22;East Lothian &#x22;,  &#x22;922&#x22;&#x3a;&#x22;East Renfrewshire &#x22;,  &#xa;     &#x22;923&#x22;&#x3a;&#x22;Edinburgh, City of &#x22;,  &#x22;924&#x22;&#x3a;&#x22;Falkirk &#x22;,  &#x22;925&#x22;&#x3a;&#x22;Fife &#x22;,  &#x22;926&#x22;&#x3a;&#x22;Glasgow City &#x22;,  &#xa;     &#x22;927&#x22;&#x3a;&#x22;Highland &#x22;,  &#x22;928&#x22;&#x3a;&#x22;Inverclyde &#x22;,  &#x22;929&#x22;&#x3a;&#x22;Midlothian &#x22;,  &#x22;930&#x22;&#x3a;&#x22;Moray &#x22;,  &#xa;     &#x22;931&#x22;&#x3a;&#x22;North Ayrshire &#x22;,  &#x22;932&#x22;&#x3a;&#x22;North Lanarkshire &#x22;,  &#x22;933&#x22;&#x3a;&#x22;Orkney Islands &#x22;,  &#xa;     &#x22;934&#x22;&#x3a;&#x22;Perth and Kinross &#x22;,  &#x22;935&#x22;&#x3a;&#x22;Renfrewshire &#x22;,  &#x22;936&#x22;&#x3a;&#x22;Shetland Islands &#x22;,  &#xa;     &#x22;937&#x22;&#x3a;&#x22;South Ayrshire &#x22;,  &#x22;938&#x22;&#x3a;&#x22;South Lanarkshire &#x22;,  &#x22;939&#x22;&#x3a;&#x22;Stirling &#x22;,  &#x22;940&#x22;&#x3a;&#x22;West Lothian &#x22;,&#xa;       &#x22;941&#x22;&#x3a;&#x22;Western Isles&#x22; &#xa;      &#x7d;&#xa;var fst_rd_cl&#x3d;&#x7b;&#x22;1&#x22;&#x3a;&#x22;Motorway&#x22; , &#x22;2&#x22;&#x3a;&#x22;A&#x28;M&#x29;&#x22; , &#x22;3&#x22;&#x3a;&#x22;A&#x22; , &#x22;4&#x22;&#x3a;&#x22;B&#x22; , &#x22;5&#x22;&#x3a;&#x22;C&#x22; , &#x22;6&#x22;&#x3a;&#x22;Unclassified&#x22;&#x7d;&#xa;var rd_type &#x3d; &#x7b; &#x22;1&#x22;&#x3a;&#x22;Roundabout&#x22;,&#x22;2&#x22;&#x3a;&#x22;One way street&#x22;,&#x22;3&#x22;&#x3a;&#x22;Dual carriageway&#x22;,&#x22;6&#x22;&#x3a;&#x22;Single carriageway&#x22;,&#x22;7&#x22;&#x3a;&#x22;Slip road&#x22;,&#x22;9&#x22;&#x3a;&#x22;Unknown&#x22;,&#x22;12&#x22;&#x3a;&#x22;One way street&#x2f;Slip road&#x22;, &#x22;-1&#x22;&#x3a; &#x22;NA&#x22;&#x7d;&#xa;var junct_detail &#x3d; &#x7b;&#x22;0&#x22;&#x3a;&#x22;Not at junction or within 20 metres&#x22; , &#x22;1&#x22;&#x3a;&#x22;Roundabout&#x22; , &#x22;2&#x22;&#x3a;&#x22;Mini-roundabout&#x22; , &#xa;					&#x22;3&#x22;&#x3a;&#x22;T or staggered junction&#x22; , &#x22;5&#x22;&#x3a;&#x22;Slip road&#x22; , &#x22;6&#x22;&#x3a;&#x22;Crossroads&#x22; , &#xa;					&#x22;7&#x22;&#x3a;&#x22;More than 4 arms &#x28;not roundabout&#x29;&#x22; , &#x22;8&#x22;&#x3a;&#x22;Private drive or entrance&#x22; , &#x22;9&#x22;&#x3a;&#x22;Other junction&#x22; , &#x22;-1&#x22;&#x3a;&#x22;NA&#x22;&#x7d;&#xa;var junc_control &#x3d; &#x7b;&#x22;0&#x22;&#x3a; &#x22;Not at junction or within 20 metres&#x22; ,  &#x22;1&#x22;&#x3a; &#x22;Authorised person&#x22; ,  &#x22;2&#x22;&#x3a; &#x22;Auto traffic signal&#x22; , &#xa;					 &#x22;3&#x22;&#x3a; &#x22;Stop sign&#x22; ,  &#x22;4&#x22;&#x3a; &#x22;Give way or uncontrolled&#x22; ,  &#x22;-1&#x22;&#x3a; &#x22;NA&#x22; &#x7d;&#xa;var second_road_cl &#x3d; &#x7b;&#x22;0&#x22;&#x3a; &#x22;Not at junction or within 20 metres&#x22;, &#x22;1&#x22;&#x3a; &#x22;Motorway&#x22;, &#x22;2&#x22;&#x3a; &#x22;A&#x28;M&#x29;&#x22;,	&#x22;3&#x22;&#x3a; &#x22;A&#x22;, &#x22;4&#x22;&#x3a; &#x22;B&#x22;, &#x22;5&#x22;&#x3a; &#x22;C&#x22;, &#x22;6&#x22;&#x3a; &#x22;Unclassified&#x22;&#x7d;&#xa;var ped_human &#x3d; &#x7b;&#x22;0&#x22;&#x3a; &#x22;None within 50 metres &#x22;,&#x22;1&#x22;&#x3a; &#x22;Control by school crossing patrol&#x22;,&#x22;2&#x22;&#x3a; &#x22;Control by other authorised person&#x22;,&#xa;				&#x22;-1&#x22;&#x3a; &#x22;NA&#x22;&#x7d;&#xa;var ped_phy &#x3d; &#x7b;&#x22;0&#x22; &#x3a;&#x22;No physical crossing facilities within 50 metres&#x22; ,&#x22;1&#x22; &#x3a;&#x22;Zebra&#x22; ,&#x22;4&#x22; &#x3a;&#x22;Pelican, puffin, toucan or similar non-junction pedestrian light crossing&#x22; ,&#xa;			&#x22;5&#x22; &#x3a;&#x22;Pedestrian phase at traffic signal junction&#x22; ,&#x22;7&#x22; &#x3a;&#x22;Footbridge or subway&#x22; ,&#x22;8&#x22; &#x3a;&#x22;Central refuge&#x22; ,&#x22;-1&#x22; &#x3a;&#x22;NA&#x22; &#x7d;&#xa;var light_cond &#x3d; &#x7b;&#x22;1&#x22;&#x3a; &#x22;Daylight&#x22;,&#x22;4&#x22;&#x3a; &#x22;Darkness - lights lit&#x22;,&#x22;5&#x22;&#x3a; &#x22;Darkness - lights unlit&#x22;,&#xa;				&#x22;6&#x22;&#x3a; &#x22;Darkness - no lighting&#x22;,&#x22;7&#x22;&#x3a; &#x22;Darkness - lighting unknown&#x22;,&#x22;-1&#x22;&#x3a; &#x22;Data missing or out of range&#x22;&#x7d;&#xa;var weather &#x3d; &#x7b;&#x22;1&#x22;&#x3a;&#x22;Fine no high winds&#x22;,&#x22;2&#x22;&#x3a;&#x22;Raining no high winds&#x22;,&#x22;3&#x22;&#x3a;&#x22;Snowing no high winds&#x22;,&#x22;4&#x22;&#x3a;&#x22;Fine &#x2b; high winds&#x22;,&#x22;5&#x22;&#x3a;&#x22;Raining &#x2b; high winds&#x22;,&#xa;			&#x22;6&#x22;&#x3a;&#x22;Snowing &#x2b; high winds&#x22;,&#x22;7&#x22;&#x3a;&#x22;Fog or mist&#x22;,&#x22;8&#x22;&#x3a;&#x22;Other&#x22;,&#x22;9&#x22;&#x3a;&#x22;Unknown&#x22;,&#x22;-1&#x22;&#x3a;&#x22;Data missing or out of range&#x22;&#x7d;&#xa;var road_sur_cond &#x3d; &#x7b;&#x22;1&#x22;&#x3a; &#x22;Dry&#x22;,&#x22;2&#x22;&#x3a; &#x22;Wet or damp&#x22;,&#x22;3&#x22;&#x3a; &#x22;Snow&#x22;,&#x22;4&#x22;&#x3a; &#x22;Frost or ice&#x22;,&#x22;5&#x22;&#x3a; &#x22;Flood over 3cm. deep&#x22;,&#x22;6&#x22;&#x3a; &#x22;Oil or diesel&#x22;,&#xa;				&#x22;7&#x22;&#x3a; &#x22;Mud&#x22;,&#x22;-1&#x22;&#x3a; &#x22;NA&#x22;&#x7d;&#x3b;&#xa;var special_cond &#x3d; &#x7b;&#x22;0&#x22;&#x3a; &#x22;None&#x22;,&#x22;1&#x22;&#x3a; &#x22;Auto traffic signal - out&#x22;,&#x22;2&#x22;&#x3a; &#x22;Auto signal part defective&#x22;,&#x22;3&#x22;&#x3a; &#x22;Road sign or marking defective or obscured&#x22;,&#xa;				&#x22;4&#x22;&#x3a; &#x22;Roadworks&#x22;,&#x22;5&#x22;&#x3a; &#x22;Road surface defective&#x22;,&#x22;6&#x22;&#x3a; &#x22;Oil or diesel&#x22;,&#x22;7&#x22;&#x3a; &#x22;Mud&#x22;,&#x22;-1&#x22;&#x3a; &#x22;NA&#x22;&#x7d;&#xa;var carraige_hazards &#x3d; &#x7b;&#x22;0&#x22;&#x3a; &#x22;None&#x22;,&#x22;1&#x22;&#x3a; &#x22;Vehicle load on road&#x22;,&#x22;2&#x22;&#x3a; &#x22;Other object on road&#x22;,&#x22;3&#x22;&#x3a; &#x22;Previous accident&#x22;,&#x22;4&#x22;&#x3a; &#x22;Dog on road&#x22;,&#xa;						&#x22;5&#x22;&#x3a; &#x22;Other animal on road&#x22;,&#x22;6&#x22;&#x3a; &#x22;Pedestrian in carriageway - not injured&#x22;,&#x22;7&#x22;&#x3a; &#x22;Any animal in carriageway &#x28;except ridden horse&#x29;&#x22;,&#x22;-1&#x22;&#x3a; &#x22;NA&#x22;&#x7d;&#xa;var urbal_rural &#x3d; &#x7b;&#x22;1&#x22;&#x3a; &#x22;Urban&#x22;, &#x22;2&#x22;&#x3a; &#x22;Rural&#x22;, &#x22;3&#x22;&#x3a; &#x22;Unallocated&#x22;&#x7d;&#x3b;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#x2f;&#x2f; A switch case for chanig the numbered &#xa;&#x2f;&#x2f; values from 3 to 1 ro Fatal, Serious and slight&#xa;&#x2f;&#x2f; Accident Severity filed&#xa;&#xa;var Accident_Severity &#x3d; accident_Sev&#x5b;acc_sev&#x5d;&#x3b;&#xa;var Police_Force &#x3d; p_force&#x5b;pc_force&#x5d;&#x3b;&#xa;var Day_in_Week	&#x3d; days_of_week&#x5b;Day_of_Week&#x5d;&#x3b;&#xa;var Local_Authority_District &#x3d; local_auth_disctrict&#x5b;District&#x5d;&#x3b;&#xa;var First_Road_Class &#x3d; fst_rd_cl&#x5b;First_Road_Class&#x5d;&#x3b;&#xa;var Road_Type &#x3d; rd_type&#x5b;rd_type&#x5d;&#x3b;&#xa;var Junction_Detail	 &#x3d; junct_detail&#x5b;jun_detail&#x5d;&#x3b;&#xa;var Junction_Control &#x3d; junc_control&#x5b;jun_ctrl&#x5d;&#x3b; &#xa;&#x2f;&#x2f;second_road_cl &#x3d; second_road_cl&#x5b;2nd_Road_Class&#x5d;&#x3b;&#xa;&#x2f;&#x2f;pedestrain_crossing_human &#x3d; ped_human&#x5b;Pedestrian_Crossing-Human_Control&#x5d;&#x3b;&#xa;&#x2f;&#x2f;pedestrain_crossing_phy&#x3d; ped_phy&#x5b;Pedestrian_Crossing-Physical_Facilities&#x5d;&#x3b;&#xa;var Light_Conditions &#x3d; light_cond&#x5b;lt_con&#x5d;&#x3b;&#xa;var Weather_Conditions	 &#x3d; weather&#x5b;wt_cond&#x5d;&#x3b;&#xa;var Road_Surface_Conditions &#x3d; road_sur_cond&#x5b;rd_sur_con&#x5d;&#x3b;&#xa;var Special_Conditions_at_Site &#x3d; special_cond&#x5b;sp_con_at_st&#x5d;&#x3b;&#xa;var Carriageway_Hazards	 &#x3d; carraige_hazards&#x5b;carr_haz&#x5d;&#x3b;&#xa;var Urban_or_Rural_Area	 &#x3d; urbal_rural&#x5b;ur_ru&#x5d;&#x3b;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>Accident_Severity</name>
+        <rename>Accident_Severity</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>Police_Force</name>
+        <rename>Police_Force</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>Day_in_Week</name>
+        <rename>Day_in_Week</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>Local_Authority_District</name>
+        <rename>Local_Authority_District</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>First_Road_Class</name>
+        <rename>First_Road_Class</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>Road_Type</name>
+        <rename>Road_Type</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>Junction_Detail</name>
+        <rename>Junction_Detail</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>Junction_Control</name>
+        <rename>Junction_Control</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>Light_Conditions</name>
+        <rename>Light_Conditions</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>Weather_Conditions</name>
+        <rename>Weather_Conditions</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>Road_Surface_Conditions</name>
+        <rename>Road_Surface_Conditions</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>Special_Conditions_at_Site</name>
+        <rename>Special_Conditions_at_Site</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>Carriageway_Hazards</name>
+        <rename>Carriageway_Hazards</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>Urban_or_Rural_Area</name>
+        <rename>Urban_or_Rural_Area</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>336</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Remove_changed_values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>Accident_Index</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Location_Easting_OSGR</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Location_Northing_OSGR</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Longitude</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Latitude</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>pc_force</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>acc_sev</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Number_of_Vehicles</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Number_of_Casualties</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Date</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Day_of_Week</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Time</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>District</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Local_Authority_&#x28;Highway&#x29;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>First_Road_Class</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Frist_Road_number</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rd_type</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Speed_limit</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>jun_detail</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>jun_ctrl</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Second_Road_Class</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>secon_rd_Cl</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ped_crossing_h</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ped_crossing_p</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>lt_con</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>wt_cond</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rd_sur_con</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>sp_con_at_st</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>carr_haz</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ur_ru</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>pol_att</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>LSOA_of_Accident_Location</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Accident_Severity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Police_Force</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Day_in_Week</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Local_Authority_District</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Road_Type</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Junction_Detail</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Junction_Control</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Light_Conditions</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Weather_Conditions</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Road_Surface_Conditions</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Special_Conditions_at_Site</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Carriageway_Hazards</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Urban_or_Rural_Area</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <remove>        <name>pc_force</name>
+      </remove>      <remove>        <name>acc_sev</name>
+      </remove>      <remove>        <name>District</name>
+      </remove>      <remove>        <name>rd_type</name>
+      </remove>      <remove>        <name>jun_detail</name>
+      </remove>      <remove>        <name>jun_ctrl</name>
+      </remove>      <remove>        <name>secon_rd_Cl</name>
+      </remove>      <remove>        <name>ped_crossing_h</name>
+      </remove>      <remove>        <name>ped_crossing_p</name>
+      </remove>      <remove>        <name>lt_con</name>
+      </remove>      <remove>        <name>wt_cond</name>
+      </remove>      <remove>        <name>rd_sur_con</name>
+      </remove>      <remove>        <name>sp_con_at_st</name>
+      </remove>      <remove>        <name>carr_haz</name>
+      </remove>      <remove>        <name>ur_ru</name>
+      </remove>      <remove>        <name>pol_att</name>
+      </remove>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>496</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>Accident_Index</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Location_Easting_OSGR</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Location_Northing_OSGR</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Longitude</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Latitude</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Police_Force</name>
+        <rename>pc_force</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Accident_Severity</name>
+        <rename>acc_sev</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Number_of_Vehicles</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Number_of_Casualties</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Date</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Day_of_Week</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Time</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Local_Authority_&#x28;District&#x29;</name>
+        <rename>District</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Local_Authority_&#x28;Highway&#x29;</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>1st_Road_Class</name>
+        <rename>First_Road_Class</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>1st_Road_Number</name>
+        <rename>Frist_Road_number</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Road_Type</name>
+        <rename>rd_type</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Speed_limit</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Junction_Detail</name>
+        <rename>jun_detail</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Junction_Control</name>
+        <rename>jun_ctrl</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>2nd_Road_Class</name>
+        <rename>Second_Road_Class</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>2nd_Road_Number</name>
+        <rename>secon_rd_Cl</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Pedestrian_Crossing_Human_Control</name>
+        <rename>ped_crossing_h</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Pedestrian_Crossing_Physical_Facilities</name>
+        <rename>ped_crossing_p</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Light_Conditions</name>
+        <rename>lt_con</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Weather_Conditions</name>
+        <rename>wt_cond</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Road_Surface_Conditions</name>
+        <rename>rd_sur_con</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Special_Conditions_at_Site</name>
+        <rename>sp_con_at_st</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Carriageway_Hazards</name>
+        <rename>carr_haz</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Urban_or_Rural_Area</name>
+        <rename>ur_ru</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Did_Police_Officer_Attend_Scene_of_Accident</name>
+        <rename>pol_att</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>LSOA_of_Accident_Location</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>192</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Text file input</name>
+    <type>TextFileInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <accept_filenames>N</accept_filenames>
+    <passing_through_fields>N</passing_through_fields>
+    <accept_field/>
+    <accept_stepname/>
+    <separator>,</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_breaks>N</enclosure_breaks>
+    <escapechar/>
+    <header>Y</header>
+    <nr_headerlines>1</nr_headerlines>
+    <footer>N</footer>
+    <nr_footerlines>1</nr_footerlines>
+    <line_wrapped>N</line_wrapped>
+    <nr_wraps>1</nr_wraps>
+    <layout_paged>N</layout_paged>
+    <nr_lines_per_page>80</nr_lines_per_page>
+    <nr_lines_doc_header>0</nr_lines_doc_header>
+    <noempty>Y</noempty>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <rownumByFile>N</rownumByFile>
+    <rownum_field/>
+    <format>mixed</format>
+    <encoding/>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;Full_raw_data&#x2f;</name>
+      <filemask>&#x5e;.&#x2a;&#x3f;Accidents.&#x2a;.csv&#x24;</filemask>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <type>CSV</type>
+      <compression>None</compression>
+    </file>
+    <filters>
+    </filters>
+    <fields>
+      <field>
+        <name>Accident_Index</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>13</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Location_Easting_OSGR</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Location_Northing_OSGR</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Longitude</name>
+        <type>Number</type>
+        <format>&#x23;.&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>9</length>
+        <precision>6</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Latitude</name>
+        <type>Number</type>
+        <format>&#x23;.&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>9</length>
+        <precision>6</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Police_Force</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Accident_Severity</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Number_of_Vehicles</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Number_of_Casualties</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Date</name>
+        <type>Date</type>
+        <format>dd&#x2f;MM&#x2f;yyyy</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Day_of_Week</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Time</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>5</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Local_Authority_&#x28;District&#x29;</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Local_Authority_&#x28;Highway&#x29;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>9</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>1st_Road_Class</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>1st_Road_Number</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Road_Type</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Speed_limit</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Junction_Detail</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Junction_Control</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>2nd_Road_Class</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>2nd_Road_Number</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Pedestrian_Crossing_Human_Control</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Pedestrian_Crossing_Physical_Facilities</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Light_Conditions</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Weather_Conditions</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Road_Surface_Conditions</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Special_Conditions_at_Site</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Carriageway_Hazards</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Urban_or_Rural_Area</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Did_Police_Officer_Attend_Scene_of_Accident</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>LSOA_of_Accident_Location</name>
+        <type>String</type>
+        <format/>
+        <currency>&#x24;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>9</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <error_ignored>N</error_ignored>
+    <skip_bad_files>N</skip_bad_files>
+    <file_error_field/>
+    <file_error_message_field/>
+    <error_line_skipped>N</error_line_skipped>
+    <error_count_field/>
+    <error_fields_field/>
+    <error_text_field/>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <date_format_lenient>Y</date_format_lenient>
+    <date_format_locale>en_US</date_format_locale>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>48</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Date and Time</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>Accident_Index</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Date</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Day_of_Week</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Time</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>320</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Accident</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>Accident_Index</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Number_of_Vehicles</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Number_of_Casualties</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Accident_Severity</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>496</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Location</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>Accident_Index</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Location_Easting_OSGR</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Location_Northing_OSGR</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Longitude</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Latitude</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Local_Authority_District</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>640</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Road</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>Accident_Index</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>First_Road_Class</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Frist_Road_number</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Speed_limit</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Second_Road_Class</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Road_Type</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Junction_Detail</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Junction_Control</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Light_Conditions</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Weather_Conditions</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Road_Surface_Conditions</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Special_Conditions_at_Site</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Carriageway_Hazards</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>752</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Time_Dimention</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>RS</connection>
+    <schema/>
+    <table>TIME</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>Accident_Index</column_name>
+          <stream_name>Accident_Index</stream_name>
+        </field>
+        <field>
+          <column_name>Date</column_name>
+          <stream_name>Date</stream_name>
+        </field>
+        <field>
+          <column_name>Day_of_Week</column_name>
+          <stream_name>Day_of_Week</stream_name>
+        </field>
+        <field>
+          <column_name>Time</column_name>
+          <stream_name>Time</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>272</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Accident_Fact</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>RS</connection>
+    <schema/>
+    <table>ACCIDENT</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>Accident_Index</column_name>
+          <stream_name>Accident_Index</stream_name>
+        </field>
+        <field>
+          <column_name>Number_of_Vehicles</column_name>
+          <stream_name>Number_of_Vehicles</stream_name>
+        </field>
+        <field>
+          <column_name>Number_of_Casualties</column_name>
+          <stream_name>Number_of_Casualties</stream_name>
+        </field>
+        <field>
+          <column_name>Accident_Severity</column_name>
+          <stream_name>Accident_Severity</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>496</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Location_Dimetion</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>RS</connection>
+    <schema/>
+    <table>LOCATION</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>Accident_Index</column_name>
+          <stream_name>Accident_Index</stream_name>
+        </field>
+        <field>
+          <column_name>Location_Easting_OSGR</column_name>
+          <stream_name>Location_Easting_OSGR</stream_name>
+        </field>
+        <field>
+          <column_name>Location_Northing_OSGR</column_name>
+          <stream_name>Location_Northing_OSGR</stream_name>
+        </field>
+        <field>
+          <column_name>Longitude</column_name>
+          <stream_name>Longitude</stream_name>
+        </field>
+        <field>
+          <column_name>Latitude</column_name>
+          <stream_name>Latitude</stream_name>
+        </field>
+        <field>
+          <column_name>Local_Authority_District</column_name>
+          <stream_name>Local_Authority_District</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>656</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Road_Dim</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>RS</connection>
+    <schema/>
+    <table>ROAD</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>Accident_Index</column_name>
+          <stream_name>Accident_Index</stream_name>
+        </field>
+        <field>
+          <column_name>First_Road_Class</column_name>
+          <stream_name>First_Road_Class</stream_name>
+        </field>
+        <field>
+          <column_name>Frist_Road_number</column_name>
+          <stream_name>Frist_Road_number</stream_name>
+        </field>
+        <field>
+          <column_name>Speed_limit</column_name>
+          <stream_name>Speed_limit</stream_name>
+        </field>
+        <field>
+          <column_name>Second_Road_Class</column_name>
+          <stream_name>Second_Road_Class</stream_name>
+        </field>
+        <field>
+          <column_name>Road_Type</column_name>
+          <stream_name>Road_Type</stream_name>
+        </field>
+        <field>
+          <column_name>Junction_Detail</column_name>
+          <stream_name>Junction_Detail</stream_name>
+        </field>
+        <field>
+          <column_name>Junction_Control</column_name>
+          <stream_name>Junction_Control</stream_name>
+        </field>
+        <field>
+          <column_name>Light_Conditions</column_name>
+          <stream_name>Light_Conditions</stream_name>
+        </field>
+        <field>
+          <column_name>Weather_Conditions</column_name>
+          <stream_name>Weather_Conditions</stream_name>
+        </field>
+        <field>
+          <column_name>Road_Surface_Conditions</column_name>
+          <stream_name>Road_Surface_Conditions</stream_name>
+        </field>
+        <field>
+          <column_name>Special_Conditions_at_Site</column_name>
+          <stream_name>Special_Conditions_at_Site</stream_name>
+        </field>
+        <field>
+          <column_name>Carriageway_Hazards</column_name>
+          <stream_name>Carriageway_Hazards</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>784</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+      <error>
+        <source_step>Cast_numbers_to_strings</source_step>
+        <target_step/>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename/>
+        <fields_valuename/>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+
+</transformation>
