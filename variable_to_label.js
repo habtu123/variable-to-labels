@@ -1,4 +1,4 @@
-//Script here
+// All variables and values are defined here as JSON 
 var accident_Sev = {"1":"Fatal", "2":"Serious", "3":"Slight"};
 var p_force = {
   "1":"Metropolitan Police" ,  "3":"Cumbria" ,  "4":"Lancashire" ,  "5":"Merseyside" ,  
@@ -158,9 +158,6 @@ var special_cond = {"0": "None","1": "Auto traffic signal - out","2": "Auto sign
 var carraige_hazards = {"0": "None","1": "Vehicle load on road","2": "Other object on road","3": "Previous accident","4": "Dog on road",
 						"5": "Other animal on road","6": "Pedestrian in carriageway - not injured","7": "Any animal in carriageway (except ridden horse)","-1": "NA"}
 var urbal_rural = {"1": "Urban", "2": "Rural", "3": "Unallocated"};
-
-
-
 
 
 
