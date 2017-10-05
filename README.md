@@ -5,5 +5,5 @@ In the data the CSV files contain only variables and I will try to use pentaho t
 
 The JavaScript will change the varibles (which are assigned numbers) to their perspective String labels. 
 
-The Pentaho transformation takes the CSV changes the values and insterts them into different Tables 
+The Pentaho transformation takes the CSV, changes the values, ignores uncecessry fields and insterts them into different Tables 
 
